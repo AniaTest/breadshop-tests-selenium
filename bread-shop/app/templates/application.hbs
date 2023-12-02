@@ -68,3 +68,18 @@
     </ul>
   </footer>
 </div>
+
+<script>
+  images = document.querySelectorAll('.bread-type-label');
+
+  if( images )
+    images.forEach( function( image )
+    {
+      image.addEventListener('mouseenter', function(event){
+        event.target.style.border = '3px solid red';
+      });
+      image.addEventListener('mouseleave', function(event){
+        event.target.style.border = '';
+      });
+    } );
+</script>

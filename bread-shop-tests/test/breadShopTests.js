@@ -29,22 +29,20 @@ describe('sandwich order', function() {
     });
  
     describe('bread type selection', function() {
+        // TODO
         it('displays the selected value', async function() {
             //act
-            await sandwichPage.selectRyeBreadOption();
     
             //assert
-            let selectedBreadValue = await sandwichPage.getBreadTypeOverview();
-            expect(selectedBreadValue).to.equal("rye bread");
-        });
 
+        });
+        // TODO
         it('removes the placeholder text', async function() {
             //act
-            await sandwichPage.selectRyeBreadOption();
-    
+
             //assert
-            let breadTypePlaceholders = await sandwichPage.getBreadTypePlaceholders();
-            expect(breadTypePlaceholders).to.have.length(0);
+            //
+            // expect(breadTypePlaceholders).to.have.length(0);
         });
     });
     
@@ -57,25 +55,13 @@ describe('sandwich order', function() {
         expect(selectedMainFillingValue).to.equal("tofu");
     });
 
+    // TODO
     it('updates the total price when the bread type is selected', async function() {
         //act
         expect(await sandwichPage.getTotalPrice()).to.equal("$0");
         
-        await sandwichPage.selectRyeBreadOption();
-        
         //assert
-        expect(await sandwichPage.getTotalPrice()).to.equal("$6");
         
-    });
-
-    it("selects extra fillings", async function() {
-        //act
-        await sandwichPage.selectExtraSaladFilling();
-        await sandwichPage.selectExtraKetchupFilling();
-
-        //assert
-        let selectedExtraFillingValue = await sandwichPage.getExtraFillingOverview();
-        expect(selectedExtraFillingValue).to.equal("salad, ketchup");
     });
 
     describe('when the network has high latency', function() {

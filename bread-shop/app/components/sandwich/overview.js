@@ -42,6 +42,10 @@ export default class SandwichOverviewComponent extends Component {
     return this.args.value.extras.join(', ');
   }
 
+  get extrasRender() {
+    return this.args.value.extras;
+  }
+
   get promoPrice() {
     if (!this.args.value?.promoCode) {
       return 0;

@@ -33,7 +33,9 @@
       <div>
         <h6 class='my-0'>Extras</h6>
         <small class='text-muted extra-filling-value'>
-          {{this.extras}}
+          {{#each this.extrasRender  as |element| }}
+            <span>{{element}}</span>
+          {{/each}}
         </small>
       </div>
       <span class='text-muted extra-filling-price'>${{this.extrasPrices}}</span>
